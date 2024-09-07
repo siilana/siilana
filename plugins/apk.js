@@ -4,6 +4,7 @@ const handler = async (m, {conn, usedPrefix: prefix, command, text}) => {
   try {    
     const searchA = await search(text);
     const data5 = await download(searchA[0].id);
+   *I am very happy that you are using the bot, please wait your request will be executed now*
     let response = `📲 تحميل التطبيقات 📲\n\n📌 *اسم التطبيق:* ${data5.name}\n📦 *الباكيدج:* ${data5.package}\n🕒 *تحذيث رقم:* ${data5.lastup}\n📥 *حجم التطبيق:* ${data5.size}\n\nما الذي يجعلك لا تتابع  صاحب البوت يا عزيزي  😄نورالدين يحب من يستعمل بوتاته لذا تابعه في حساباته \ninstagram.com/imran_information`
     await conn.sendMessage(m.chat, {image: {url: data5.icon}, caption: response}, {quoted: m});
  if (data5.size.includes('GB') || data5.size.replace(' MB', '') > 999) {
